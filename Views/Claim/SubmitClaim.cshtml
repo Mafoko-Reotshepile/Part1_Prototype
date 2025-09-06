@@ -1,0 +1,28 @@
+﻿@{
+    ViewData["Title"] = "Submit Claim";
+}
+
+<h2>Submit a New Claim</h2>
+
+<form method="post" asp-action="SubmitClaim" asp-controller="Claim">
+    <label>Month:</label>
+    <select name="Month">
+        <option>January</option>
+        <option>February</option>
+        <option>March</option>
+        <option>April</option>
+        <option>May</option>
+        <!-- add more months -->
+    </select>
+    <br /><br />
+
+    <label>Hours Worked:</label>
+    <input type="number" name="HoursWorked" placeholder="Enter total hours" />
+    <br /><br />
+
+    <label>Hourly Rate:</label>
+    <input type="number" step="0.01" name="HourlyRate" placeholder="Enter rate per hour" />
+    <br /><br />
+
+    <input type="submit" value="Submit Claim" />
+</form>

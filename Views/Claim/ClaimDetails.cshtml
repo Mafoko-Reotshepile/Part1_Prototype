@@ -1,0 +1,16 @@
+﻿@{
+    ViewData["Title"] = "Claim Details";
+}
+
+<h2>Claim Details</h2>
+
+<form method="get" asp-action="ClaimDetails" asp-controller="Claim">
+    <label>Enter Claim ID:</label>
+    <input type="text" name="ClaimID" placeholder="e.g. 101" />
+    <br /><br />
+
+    <input type="submit" value="Show Details" />
+</form>
+
+<!-- Later this section will display claim info -->
+<p>Claim info will appear here once functionality is added.</p>

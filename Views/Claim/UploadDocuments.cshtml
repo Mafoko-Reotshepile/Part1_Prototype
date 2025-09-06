@@ -1,0 +1,17 @@
+﻿@{
+    ViewData["Title"] = "Upload Documents";
+}
+
+<h2>Upload Supporting Documents</h2>
+
+<form method="post" asp-action="UploadDocuments" asp-controller="Claim" enctype="multipart/form-data">
+    <label>Claim ID:</label>
+    <input type="text" name="ClaimID" placeholder="e.g. 101" />
+    <br /><br />
+
+    <label>Choose File:</label>
+    <input type="file" name="Document" />
+    <br /><br />
+
+    <input type="submit" value="Upload Document" />
+</form>

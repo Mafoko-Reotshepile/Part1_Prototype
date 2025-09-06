@@ -1,0 +1,28 @@
+﻿<link rel="stylesheet" href="/css/Style.css">
+
+<form method="post" action="/Home/Dashboard">
+
+
+	<input type="text" placeholder="Enter name" />
+	<select>
+		<option>Select role</option>
+		<option>Lecturer</option>
+		<option>PC</option>
+		<option>PM</option>
+	</select>
+	<br>
+	<input type="email" placeholder="Enter email" />
+	<br>
+	<input type="password" placeholder="Enter password" />
+	<br>
+	<input type="submit" value="Register" />
+
+
+</form>
+
+<p>
+	Already have an account?
+
+	<a href=@Url.Action("Index", "Home")>Login now</a>
+
+</p>

@@ -1,0 +1,82 @@
+﻿@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<h2>Welcome to the Contract Monthly Claim System</h2>
+<p>You are logged in as: @ViewBag.Email</p>
+
+<hr />
+
+<!-- Submit New Claim -->
+<h3>1. Submit a New Claim</h3>
+<form method="post" asp-action="SubmitClaim" asp-controller="Claim">
+    <label>Month:</label>
+    <select name="Month">
+        <option>January</option>
+        <option>February</option>
+        <option>March</option>
+        <!-- etc -->
+    </select>
+    <br /><br />
+
+    <label>Hours Worked:</label>
+    <input type="number" name="HoursWorked" placeholder="Enter total hours" />
+    <br /><br />
+
+    <label>Hourly Rate:</label>
+    <input type="number" step="0.01" name="HourlyRate" placeholder="Enter rate per hour" />
+    <br /><br />
+
+    <input type="submit" value="Submit Claim" />
+</form>
+
+<hr />
+
+<!-- Show Claim Details -->
+<h3>2. Show Claim Details</h3>
+<form method="get" asp-action="ClaimDetails" asp-controller="Claim">
+    <label>Enter Claim ID:</label>
+    <input type="text" name="ClaimID" placeholder="e.g. 101" />
+    <br /><br />
+
+    <input type="submit" value="Show Details" />
+</form>
+
+<hr />
+
+<!-- Claim Process (Approve/Reject) -->
+<h3>3. Verify / Approve Claim</h3>
+<form method="post" asp-action="ClaimProcess" asp-controller="Claim">
+    <label>Claim ID:</label>
+    <input type="text" name="ClaimID" placeholder="e.g. 101" />
+    <br /><br />
+
+    <label>Decision:</label>
+    <select name="Decision">
+        <option>Approve</option>
+        <option>Reject</option>
+    </select>
+    <br /><br />
+
+    <label>Comments:</label>
+    <textarea name="Comments" placeholder="Optional notes"></textarea>
+    <br /><br />
+
+    <input type="submit" value="Submit Decision" />
+</form>
+
+<hr />
+
+<!-- Upload Supporting Documents -->
+<h3>4. Upload Supporting Documents</h3>
+<form method="post" asp-action="UploadDocuments" asp-controller="Claim" enctype="multipart/form-data">
+    <label>Claim ID:</label>
+    <input type="text" name="ClaimID" placeholder="e.g. 101" />
+    <br /><br />
+
+    <label>Choose File:</label>
+    <input type="file" name="Document" />
+    <br /><br />
+
+    <input type="submit" value="Upload Document" />
+</form>

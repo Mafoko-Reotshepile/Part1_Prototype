@@ -1,0 +1,24 @@
+﻿@{
+    ViewData["Title"] = "Claim Process";
+}
+
+<h2>Verify and Approve Claim</h2>
+
+<form method="post" asp-action="ClaimProcess" asp-controller="Claim">
+    <label>Claim ID:</label>
+    <input type="text" name="ClaimID" placeholder="e.g. 101" />
+    <br /><br />
+
+    <label>Decision:</label>
+    <select name="Decision">
+        <option>Approve</option>
+        <option>Reject</option>
+    </select>
+    <br /><br />
+
+    <label>Comments:</label>
+    <textarea name="Comments" placeholder="Optional notes"></textarea>
+    <br /><br />
+
+    <input type="submit" value="Submit Decision" />
+</form>
