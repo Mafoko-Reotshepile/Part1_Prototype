@@ -13,10 +13,10 @@ namespace CMCS.Controllers
         }
 
         // Show claim details
-        [HttpGet]
+        [HttpGet] 
         public IActionResult ClaimDetails(string ClaimID)
         {
-            ViewBag.Message = $"Showing details for Claim {ClaimID} (mock data).";
+            ViewBag.Message = $"Showing details for the Claim {ClaimID} (mock data).";
             return View("../Home/Dashboard");
         }
 
